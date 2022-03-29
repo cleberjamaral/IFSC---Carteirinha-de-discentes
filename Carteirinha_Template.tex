@@ -1,0 +1,52 @@
+\documentclass[11pt,a4paper]{memoir}
+
+\setstocksize{55mm}{85mm} % UK Stock size
+\setpagecc{55mm}{85mm}{*}
+\settypeblocksize{45mm}{75mm}{*}
+\setulmargins{5mm}{*}{*}
+\setlrmargins{5mm}{*}{*}
+\usepackage{xcolor}
+\usepackage{titlecaps}
+
+\setheadfoot{0.1pt}{0.1pt}
+\setheaderspaces{1pt}{*}{*}
+
+\checkandfixthelayout[fixed]
+
+\pagestyle{empty}
+
+\usepackage{pstricks}
+\usepackage{auto-pst-pdf,pst-barcode}
+
+\begin{document}
+    \begin{Spacing}{0.75}%
+    \noindent
+    \texttt{\fontsize{4mm}{5mm}\selectfont Instituto Federal de Santa Catarina}\\
+    \texttt{\fontsize{3mm}{4mm}\selectfont Campus São José }\\ 
+    \rule{74mm}{.3mm}\\
+    \begin{minipage}[t]{33mm}
+        \vspace{-2mm}%
+        \hspace{-4mm}\includegraphics[height=25mm]{logo-ifsc-saojose.png}
+    \end{minipage}
+    \hspace{1mm}
+    \begin{minipage}[t]{42mm}
+        \vspace{-1mm}%
+        \begin{flushleft}
+        {\scriptsize
+            \begin{Spacing}{1}%
+            \vspace{1mm}
+            \hspace{-15mm}{\color{gray}Nome:}{\VAR{NOME}}\\
+            \hspace{-15mm}{\color{gray}CPF:} \hspace{1mm}{\VAR{CPF}}\\
+            \end{Spacing}
+        }
+    \begin{minipage}[t]{33mm}
+        \vspace{-1mm}%
+        \includegraphics[height=10mm]{assinatura.png}
+    \end{minipage}
+        \end{flushleft}
+    \end{minipage}
+    \vspace{0mm}
+    \rule{74mm}{0.3mm}\\
+    \end{Spacing}
+    \vspace{-5mm} \hspace{15mm} \texttt{\fontsize{2mm}{3mm}\selectfont {\color{gray}Hash:} {\VAR{HASH}}}
+\end{document}
