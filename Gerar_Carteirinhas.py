@@ -16,7 +16,7 @@ def delete_files(extension):
 def generate_cards():
 
     for student in df.index:
-        card, hash = c.generate_card(df['Nome'][student],df['CPF'][student])
+        card, hash = c.generate_card(df['Curso'][student],df['Nome'][student],df['Matrícula'][student])
 
         # Write test TEX and PDF files
         output_file = "Carteirinha_" + df['Nome'][student] + "_" + hash + ".tex"
