@@ -1,14 +1,9 @@
-import Carteirinha_Insersor as c
+import Insersor_Carteirinha as c
 import os
+import pandas as pd
 
-# CONFIGURAÇÕES:
-students = [
-    "ADRIAN RAFAEL LIMA MEDEIROS",
-    "ARTHUR SILVA ESTACIO",
-    "ELIZA DOS SANTOS GONÇALVES",
-    "ERIKA EUFRASIO",
-    "FRANCISCO DE ASSIS FLORIANO CORREA JUNIOR"
-    ]
+url_db = ('./consulta_geral_discente.csv')
+df = pd.read_csv(url_db, sep=';', encoding='iso-8859-1')
 
 def delete_files(extension):
     directory = "./"
@@ -20,11 +15,11 @@ def delete_files(extension):
 
 def generate_cards():
 
-    for student in students:
-        card, hash = c.generate_card(student,"123.456.789-01")
+    for student in df.index:
+        card, hash = c.generate_card(df['Nome'][student],df['CPF'][student])
 
         # Write test TEX and PDF files
-        output_file = "Carteirinha_" + student + "_" + hash + ".tex"
+        output_file = "Carteirinha_" + df['Nome'][student] + "_" + hash + ".tex"
         with open(output_file, 'w') as f:
             f.write("".join(card))
         os.system('xelatex -synctex=1 "' + output_file + '"')
@@ -34,4 +29,3 @@ delete_files("log")
 delete_files("out")
 delete_files("gz")
 delete_files("aux")
-delete_files("csv")
