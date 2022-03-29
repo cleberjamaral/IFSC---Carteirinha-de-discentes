@@ -19,7 +19,7 @@ def generate_cards():
         card, hash = c.generate_card(df['Curso'][student],df['Nome'][student],df['Matrícula'][student])
 
         # Write test TEX and PDF files
-        output_file = "Carteirinha_" + df['Nome'][student] + "_" + hash + ".tex"
+        output_file = "Carteirinha_" + df['Curso'][student] + "_" + df['Nome'][student] + ".tex"
         with open(output_file, 'w') as f:
             f.write("".join(card))
         os.system('xelatex -synctex=1 "' + output_file + '"')

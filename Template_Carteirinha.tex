@@ -7,6 +7,8 @@
 \setlrmargins{5mm}{*}{*}
 \usepackage{xcolor}
 \usepackage{titlecaps}
+\definecolor{background}{RGB}{200,255,200}
+\pagecolor{background}
 
 \setheadfoot{0.1pt}{0.1pt}
 \setheaderspaces{1pt}{*}{*}
@@ -26,7 +28,7 @@
     \rule{74mm}{.3mm}\\
     \begin{minipage}[t]{33mm}
         \vspace{-2mm}%
-        \hspace{-4mm}\includegraphics[height=25mm]{logo-ifsc-saojose.png}
+        \hspace*{0mm}\includegraphics[height=25mm]{logo-ifsc-saojose.png}
     \end{minipage}
     \hspace{1mm}
     \begin{minipage}[t]{42mm}
@@ -42,12 +44,12 @@
         }
     \begin{minipage}[t]{33mm}
         \vspace{-1mm}%
-        \includegraphics[height=7mm]{assinatura.png}
+        \hspace{-2mm}\includegraphics[height=7mm]{assinatura.png}
     \end{minipage}
         \end{flushleft}
     \end{minipage}
     \vspace{-0.5mm}
     \rule{74mm}{0.3mm}\\
     \end{Spacing}
-    \vspace{-5mm} \hspace{15mm} \texttt{\fontsize{2mm}{3mm}\selectfont {\color{gray}Hash:} {\VAR{HASH}}}
+    \vspace{-5mm} \hspace*{15mm} \texttt{\fontsize{2mm}{3mm}\selectfont {\color{gray}Hash:} {\VAR{HASH}}}
 \end{document}

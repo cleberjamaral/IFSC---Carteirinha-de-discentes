@@ -1,0 +1,3 @@
+Matrícula;Nome;Nacionalidade;UF_Nacionalidade;Data_Nascimento;RG_Orgão_Emissor;CPF;telefone;email;NecessidadeEspecial;Sexo;Raca;FormaIngresso;Curso;Status;dataMatricula;campusIes
+202121234567;MATHEUS DOS ANJOS JUNIOR;Brasil;São Paulo;01/01/2001;123456789 SSP/SP/SP;12345678901;48 12345-1234;fulano@yahoo.com.br;;M;Branco (a);Ingresso sem prova;TÉCNICO EM TELECOMUNICAÇÕES [111];CURSANDO;06/09/2021;SÃO JOSÉ
+202011234567;CLARICE MARIA GONÇALVES NASCIMENTO;Brasil;Santa Catarina;03/03/1999;1234567 SSP/SC;12345678901;48 12345-1234;fulano@yahoo.com.br;;F;Pardo (a);Ingresso sem prova;TÉCNICO EM TELECOMUNICAÇÕES [111];CURSANDO;28/06/2019;SÃO JOSÉ
