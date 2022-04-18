@@ -2,9 +2,6 @@ import Insersor_Carteirinha as c
 import os
 import pandas as pd
 
-url_db = ('./consulta_geral_discente.csv')
-df = pd.read_csv(url_db, sep=';', encoding='iso-8859-1')
-
 def delete_files(directory,extension):
     files = os.listdir(directory)
     filtered = [file for file in files if file.endswith("." + extension)]
@@ -13,7 +10,6 @@ def delete_files(directory,extension):
         os.remove(path)
 
 def generate_cards():
-
     if not os.path.exists("./output"):
         os.makedirs("./output")
     os.chdir('./output')
@@ -25,10 +21,17 @@ def generate_cards():
         with open(output_file, 'w') as f:
             f.write("".join(card))
         os.system('xelatex -synctex=1 "' + output_file + '"')
+    delete_files("./","log")
+    delete_files("./","out")
+    delete_files("./","gz")
+    delete_files("./","aux")
+    delete_files("./","tex")
+    os.chdir('../')
 
-generate_cards()
-delete_files("./","log")
-delete_files("./","out")
-delete_files("./","gz")
-delete_files("./","aux")
-delete_files("./","tex")
+for file in os.listdir("./"):
+    if file.startswith("consulta_geral_discente"):
+        url_db = ("./" + file)
+        print("Processando arquivo " + url_db)
+        df = pd.read_csv(url_db, sep=';', encoding='iso-8859-1')
+        generate_cards()
+
