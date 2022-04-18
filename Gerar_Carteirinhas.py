@@ -28,9 +28,9 @@ def generate_cards():
     delete_files("./","tex")
     os.chdir('../')
 
-for file in os.listdir("./"):
+for file in os.listdir("./input/"):
     if file.startswith("consulta_geral_discente"):
-        url_db = ("./" + file)
+        url_db = ("./input/" + file)
         print("Processando arquivo " + url_db)
         df = pd.read_csv(url_db, sep=';', encoding='iso-8859-1')
         generate_cards()
